@@ -1,0 +1,23 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int n;
+	cout << "Pelease enter n: ";//n的范围0-2147483647
+	cin >> n;//越大越精确  
+	int flag = 1;//符号
+	double temp;//第n个分数
+	double sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		temp = 1.0*flag / (2 * i + 1);//必须要有1.0 
+		flag = -flag;
+		sum = sum + temp;
+	}
+	double PI = 4 * sum;
+	cout << fixed<<setprecision(10) <<PI << endl;//输出π,保留十位小数
+	int pi;
+    pi=static_cast<int>(PI);//数据类型强制转化为int型
+	cout << pi << endl;
+}
